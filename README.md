@@ -5,8 +5,10 @@ Android P2P Sample
 
 ## 开发者中心
 
-**地址**: http://devcenter.vbyte.cn
-**测试帐号**: 用户名: test@vbyte.cn，密码: Vb360
+开发者中心可帮助您查看一些统计数据。
+
+**地址**: http://devcenter.vbyte.cn  
+**测试帐号**: 用户名: test@vbyte.cn，密码: Vb360  
 
 ## 集成指南
 
@@ -41,6 +43,6 @@ dependencies {
 
 ## 功能列表
 
-[x] 低延迟P2P直播
-[x] HLS、MP4、FLV等格式的点播P2P
-[] HLS直播P2P
+- [x] 低延迟P2P直播  
+- [x] HLS、MP4、FLV等格式的点播P2P  
+- [ ] HLS直播P2P
