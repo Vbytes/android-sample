@@ -48,7 +48,6 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 ```
 - 然后就可以尽情地使用IJKPlayer和我们的P2P带来的便利功能吧
-- 
 
 **提示**: 如果您的android项目是一个Eclipse+ADT项目，我们建议您尽快转到AndroidStudio上面，当然，你也可以按照我们的文档手动将这些so库和jar包放到您的项目中。
 
