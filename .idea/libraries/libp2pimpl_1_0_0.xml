@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="libp2pimpl-1.0.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ijkplayer-sample/build/intermediates/exploded-aar/cn.vbyte.p2p/libp2pimpl/1.0.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/ijkplayer-sample/build/intermediates/exploded-aar/cn.vbyte.p2p/libp2pimpl/1.0.0/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/cn.vbyte.p2p/libp2pimpl/1.0.0/5594b4915d91b9692ef096eec87b183c1fb50a54/libp2pimpl-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,6 +1,8 @@
 Android P2P Sample
 ===
 
+**[demo下载][]**
+
 该项目使用IJKPlayer，演示我们的P2P功能的样例程序
 
 ## 开发者中心
@@ -61,3 +63,5 @@ ijkMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_FORMAT, "probesize", 4096);
 - [x] 低延迟P2P直播,进入应用->电视直播->安徽卫视 即是低延迟P2P 
 - [x] HLS、MP4、FLV等格式的点播P2P  
 - [ ] HLS直播P2P
+
+[demo下载]: http://www.vbyte.cn/app/android-apk/ijkplayer-sample-all32-debug.apk
