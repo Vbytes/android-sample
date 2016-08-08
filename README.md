@@ -25,7 +25,7 @@ dependencies {
     // ExoPlayer as IMediaPlayer: optional, experimental
     compile 'tv.danmaku.ijk.media:ijkplayer-exo:0.5.1'
     compile 'cn.vbyte.p2p:libp2p:1.0.0'
-    compile 'cn.vbyte.p2p:libp2pimpl:1.0.0'
+    compile 'cn.vbyte.p2p:libp2pimpl:1.1.0'
 }
 ```
 - 在应用启动之初，启动VbyteP2PModule
@@ -62,6 +62,6 @@ ijkMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_FORMAT, "probesize", 4096);
 
 - [x] 低延迟P2P直播,进入应用->电视直播->安徽卫视 即是低延迟P2P 
 - [x] HLS、MP4、FLV等格式的点播P2P  
-- [ ] HLS直播P2P
+- [x] HLS直播P2P
 
 [demo下载]: http://www.vbyte.cn/app/android-apk/ijkplayer-sample-all32-debug.apk

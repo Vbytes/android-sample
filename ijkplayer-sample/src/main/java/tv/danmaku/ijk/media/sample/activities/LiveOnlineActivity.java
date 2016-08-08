@@ -212,6 +212,15 @@ public class LiveOnlineActivity extends AppActivity {
                 // 初始化插入数据
                 ContentValues values = new ContentValues();
 
+                values.put("name", "直播测试");
+                values.put("channelID", "5799759e15c450206960996d");
+                mDb.insert(table, null, values);
+
+                values.put("name", "低延迟测试");
+                values.put("channelID", "575797d8581221c12e45f493");
+                mDb.insert(table, null, values);
+
+                /*
                 values.put("name", "安徽卫视");
                 values.put("channelID", "14496521645631186");
                 mDb.insert(table, null, values);
@@ -219,9 +228,9 @@ public class LiveOnlineActivity extends AppActivity {
                 values.put("name", "cctv5");
                 values.put("channelID", "14395321695743290");
                 mDb.insert(table, null, values);
-
+                */
             }else {
-                return ;
+                return;
             }
 
             // listItemAdapter.notifyDataSetChanged();

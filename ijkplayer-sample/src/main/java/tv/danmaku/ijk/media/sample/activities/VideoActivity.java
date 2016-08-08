@@ -72,6 +72,7 @@ public class VideoActivity extends AppCompatActivity {
 
         if (mTagActivity instanceof LiveOnlineActivity){
             mIsLiveVideo=true;
+            LiveController.getInstance().setMediaFormat("flv");
             Uri uri = LiveController.getInstance().load(videoPath, "UHD");
             intent.putExtra("videoPath", uri.toString());
             Log.e(TAG, "source  path " + uri.toString() + "\n");
