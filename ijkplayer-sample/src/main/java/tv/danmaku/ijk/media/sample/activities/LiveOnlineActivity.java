@@ -72,7 +72,7 @@ public class LiveOnlineActivity extends AppActivity {
                 // 动态数组与ImageItem对应的子项
                 new String[] {  "name", "channelID" },
                 // ImageItem的XML文件里面的一个ImageView,两个TextView ID
-                new int[] { android.R.id.text1, android.R.id.text2 });
+                new int[] { android.R.id.text1, android.R.id.text2});
         list.setAdapter(listItemAdapter);
         list.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
 
@@ -196,7 +196,7 @@ public class LiveOnlineActivity extends AppActivity {
                 mDb.execSQL("create table if not exists "
                         + table
                         + " (id integer primary key autoincrement, "
-                        + "name text not null, channelID text not null,image text);");
+                        + "name text not null, channelID text not null, image text);");
             } catch (SQLException e) {
                 Toast.makeText(getApplicationContext(), "数据表创建失败",
                         Toast.LENGTH_LONG).show();
@@ -212,25 +212,28 @@ public class LiveOnlineActivity extends AppActivity {
                 // 初始化插入数据
                 ContentValues values = new ContentValues();
 
-                values.put("name", "直播测试");
-                values.put("channelID", "5799759e15c450206960996d");
+                values.put("name", "cctv5_1200");
+                values.put("channelID", "14395321695743290");
                 mDb.insert(table, null, values);
 
-                values.put("name", "低延迟测试");
-                values.put("channelID", "575797d8581221c12e45f493");
-                mDb.insert(table, null, values);
-
-                /*
                 values.put("name", "安徽卫视");
                 values.put("channelID", "14496521645631186");
                 mDb.insert(table, null, values);
 
-                values.put("name", "cctv5");
-                values.put("channelID", "14395321695743290");
+                values.put("name", "低延迟测试");
+                values.put("channelID", "57aaf3603d6bc39a2c61f2e0");
                 mDb.insert(table, null, values);
-                */
+
+                values.put("name", "HLS测试");
+                values.put("channelID", "5799db5a15c4502069609970");
+                mDb.insert(table, null, values);
+
+                values.put("name", "HLS-CCTV5测试");
+                values.put("channelID", "5799dbb16b66eb25691396b4");
+                mDb.insert(table, null, values);
+
             }else {
-                return;
+                return ;
             }
 
             // listItemAdapter.notifyDataSetChanged();
@@ -268,7 +271,7 @@ public class LiveOnlineActivity extends AppActivity {
                     map.put("id", c.getString(0));
                     map.put("name", c.getString(1));
                     map.put("channelID", c.getString(2));
-
+                    map.put("format", c.getString(3));
                 }
                 listData.add(map);
             }

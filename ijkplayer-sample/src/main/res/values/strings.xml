@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">VbyteP2P Demo</string>
+    <string name="app_name">vbyte Demo</string>
 
     <string name="N_A">N/A</string>
     <string name="close">关闭</string>

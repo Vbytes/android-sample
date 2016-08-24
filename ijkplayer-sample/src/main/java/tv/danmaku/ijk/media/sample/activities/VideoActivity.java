@@ -28,22 +28,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
 import com.vbyte.p2p.*;
 
-import cn.vbyte.p2p.live.LiveController;
-import cn.vbyte.p2p.v2.P2PModuleImpl;
+import cn.vbyte.p2p.LiveController;
 import tv.danmaku.ijk.media.player.IjkMediaPlayer;
 import cn.vbyte.android.sample.R;
 import tv.danmaku.ijk.media.sample.application.Settings;
 import tv.danmaku.ijk.media.sample.widget.media.AndroidMediaController;
 import tv.danmaku.ijk.media.sample.widget.media.IjkVideoView;
-import tv.danmaku.ijk.media.sample.widget.media.MeasureHelper;
 
 
 public class VideoActivity extends AppCompatActivity {
@@ -65,17 +62,15 @@ public class VideoActivity extends AppCompatActivity {
     private static boolean mIsLiveVideo;
     private  static Activity mTagActivity;
 
-    public static Intent newIntent(Context context, String videoPath, String videoTitle) {
+    public static Intent newIntent(Context context, String videoPath, String videoTitle, String format) {
         Intent intent = new Intent(context, VideoActivity.class);
         intent.putExtra("videoTitle", videoTitle);
         mTagActivity= (Activity)context;
 
         if (mTagActivity instanceof LiveOnlineActivity){
             mIsLiveVideo=true;
-            LiveController.getInstance().setMediaFormat("flv");
-            Uri uri = LiveController.getInstance().load(videoPath, "UHD");
-            intent.putExtra("videoPath", uri.toString());
-            Log.e(TAG, "source  path " + uri.toString() + "\n");
+            intent.putExtra("videoPath", videoPath);
+            Log.e(TAG, "source  path " + videoPath + "\n");
         }else {
             intent.putExtra("videoPath", videoPath);
         }
@@ -83,7 +78,7 @@ public class VideoActivity extends AppCompatActivity {
     }
 
     public static void intentTo(Context context, String videoPath, String videoTitle) {
-        context.startActivity(newIntent(context, videoPath, videoTitle));
+        context.startActivity(newIntent(context, videoPath, videoTitle, ""));
     }
 
     @Override
@@ -95,7 +90,6 @@ public class VideoActivity extends AppCompatActivity {
 
         // handle arguments
         mVideoPath = getIntent().getStringExtra("videoPath");
-
         Intent intent = getIntent();
         String intentAction = intent.getAction();
         if (!TextUtils.isEmpty(intentAction)) {
@@ -125,6 +119,11 @@ public class VideoActivity extends AppCompatActivity {
             }
         }
 
+        Button reloadBtn = (Button)findViewById((R.id.reload_button));
+        reloadBtn.setOnClickListener(new ButtonListener());
+        if(!mIsLiveVideo){
+            reloadBtn.setVisibility(View.INVISIBLE);
+        }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.player_toolbar);
         setSupportActionBar(toolbar);
@@ -153,7 +152,22 @@ public class VideoActivity extends AppCompatActivity {
 
         // prefer mVideoPath
         if (mVideoPath != null)
-            mVideoView.setVideoPath(mVideoPath);
+            if (mIsLiveVideo) {
+                try {
+                    LiveController.getInstance().load(mVideoPath, "UHD", new OnLoadedListener() {
+                        @Override
+                        public void onLoaded(Uri uri) {
+                            mVideoView.setVideoURI(uri);
+                            mVideoView.start();
+                        }
+                    });
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return;
+            } else {
+                mVideoView.setVideoPath(mVideoPath);
+            }
         else if (mVideoUri != null)
             mVideoView.setVideoURI(mVideoUri);
         else {
@@ -164,6 +178,48 @@ public class VideoActivity extends AppCompatActivity {
         mVideoView.start();
     }
 
+
+    class ButtonListener implements View.OnClickListener
+    {
+
+        public void onClick(View v)
+        {
+
+            if (mIsLiveVideo){
+                LiveController.getInstance().unload();
+            }
+            mVideoView.stopPlayback();
+            mVideoView.release(true);
+            mVideoView.stopBackgroundPlay();
+
+            if (getIntent().getStringExtra("channel") != null){
+                // ============================================
+                mIsLiveVideo=true;
+                try {
+                    LiveController.getInstance().load(getIntent().getStringExtra("channel"), "UHD", new OnLoadedListener() {
+                        @Override
+                        public void onLoaded(Uri uri) {
+                            mVideoPath = uri.toString();
+                            mVideoView.setVideoURI(uri);
+                            mVideoView.start();
+                        }
+                    });
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return;
+            }else {
+                mVideoPath = getIntent().getStringExtra("videoPath");
+            }
+
+            if (mVideoPath != null)
+                mVideoView.setVideoPath(mVideoPath);
+            mVideoView.start();
+
+        }
+
+
+    }
     @Override
     public void onBackPressed() {
         mBackPressed = true;
@@ -184,6 +240,7 @@ public class VideoActivity extends AppCompatActivity {
         IjkMediaPlayer.native_profileEnd();
         if (mIsLiveVideo){
             LiveController.getInstance().unload();
+            mIsLiveVideo = false;
         }
     }
 }

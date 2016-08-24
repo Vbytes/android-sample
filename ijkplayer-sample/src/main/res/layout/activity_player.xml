@@ -31,7 +31,13 @@
         android:padding="16dp"
         android:textSize="16sp"
         android:visibility="gone" />
-
+    <Button android:id="@+id/reload_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_vertical"
+        android:background="@color/ijk_color_blue_900"
+        android:text="reload"
+        />
     <TableLayout
         android:id="@+id/hud_view"
         android:layout_width="wrap_content"
