@@ -78,8 +78,10 @@ ijkMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_FORMAT, "probesize", 4096);
 ## 更新内容
 
 #### 1.2.0
-- 稳定性提升
 - 完成HLS协议的P2P
+- P2P性能优化，播放体验优化
+- 完成直播的时移功能
+- 稳定性提升
 
 ## 功能列表
 
