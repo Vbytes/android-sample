@@ -24,8 +24,8 @@ dependencies {
     compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.5.1'
     // ExoPlayer as IMediaPlayer: optional, experimental
     compile 'tv.danmaku.ijk.media:ijkplayer-exo:0.5.1'
-    compile 'cn.vbyte.p2p:libp2p:1.0.0'
-    compile 'cn.vbyte.p2p:libp2pimpl:1.1.0'
+    compile 'cn.vbyte.p2p:libp2p:1.1.0'
+    compile 'cn.vbyte.p2p:libp2pimpl:1.2.0'
 }
 ```
 - 在应用启动之初，启动VbyteP2PModule
@@ -49,6 +49,22 @@ protected void onCreate(Bundle savedInstanceState) {
 
 }
 ```
+- 启动一个频道的过程如下:
+```java
+try {
+    LiveController.getInstance().load("your channel id", "UHD", new OnLoadedListener() {
+        @Override
+        public void onLoaded(Uri uri) {
+            mVideoPath = uri.toString();
+            mVideoView.setVideoURI(uri);
+            mVideoView.start();
+        }
+    });
+} catch (Exception e) {
+    // 如果打印了此exception，说明load/unload没有成对出现
+    e.printStackTrace();
+}
+```
 - 然后就可以尽情地使用IJKPlayer和我们的P2P带来的便利功能吧
 
 **提示**: 如果您的android项目是一个Eclipse+ADT项目，我们建议您尽快转到AndroidStudio上面，当然，你也可以按照我们的文档手动将这些so库和jar包放到您的项目中。
@@ -57,6 +73,13 @@ protected void onCreate(Bundle savedInstanceState) {
 ```java
 ijkMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_FORMAT, "probesize", 4096);
 ```
+
+
+## 更新内容
+
+#### 1.2.0
+- 稳定性提升
+- 完成HLS协议的P2P
 
 ## 功能列表
 
