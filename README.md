@@ -67,13 +67,13 @@ try {
 ```
 - 然后就可以尽情地使用IJKPlayer和我们的P2P带来的便利功能吧
 
-**提示**: 如果您的android项目是一个Eclipse+ADT项目，我们建议您尽快转到AndroidStudio上面，当然，你也可以按照我们的文档手动将这些so库和jar包放到您的项目中。
+**提示**: 如果您的android项目是一个Eclipse+ADT项目，我们建议您尽快转到AndroidStudio上面，当然，你也可以按照我们的[文档][]手动将这些so库和jar包放到您的项目中。
 
 **提示**: 最新版的ijkplayer-android上面实现低延迟秒开的优化是设置下面这个参数:
 ```java
 ijkMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_FORMAT, "probesize", 4096);
+IjkMediaPlayer.setOption(ijkMediaPlayer.OPT_CATEGORY_PLAYER, "packet-buffering", 0);
 ```
-
 
 ## 更新内容
 
@@ -90,3 +90,4 @@ ijkMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_FORMAT, "probesize", 4096);
 - [x] HLS直播P2P
 
 [demo下载]: http://www.vbyte.cn/app/android-apk/ijkplayer-sample-all32-debug.apk
+[文档]: https://github.com/Vbytes/libp2pimpl-android/blob/master/README.md
