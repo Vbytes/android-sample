@@ -192,11 +192,11 @@ public class VideoActivity extends AppCompatActivity {
             mVideoView.release(true);
             mVideoView.stopBackgroundPlay();
 
-            if (getIntent().getStringExtra("channel") != null){
+            if (getIntent().getStringExtra("videoPath") != null){
                 // ============================================
                 mIsLiveVideo=true;
                 try {
-                    LiveController.getInstance().load(getIntent().getStringExtra("channel"), "UHD", new OnLoadedListener() {
+                    LiveController.getInstance().load(getIntent().getStringExtra("videoPath"), "UHD", new OnLoadedListener() {
                         @Override
                         public void onLoaded(Uri uri) {
                             mVideoPath = uri.toString();

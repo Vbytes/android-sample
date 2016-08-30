@@ -25,7 +25,7 @@ dependencies {
     // ExoPlayer as IMediaPlayer: optional, experimental
     compile 'tv.danmaku.ijk.media:ijkplayer-exo:0.5.1'
     compile 'cn.vbyte.p2p:libp2p:1.1.0'
-    compile 'cn.vbyte.p2p:libp2pimpl:1.2.1'
+    compile 'cn.vbyte.p2p:libp2pimpl:1.2.2'
 }
 ```
 - 在应用启动之初，启动VbyteP2PModule
