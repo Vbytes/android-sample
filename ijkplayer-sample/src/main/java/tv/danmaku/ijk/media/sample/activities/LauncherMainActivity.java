@@ -29,6 +29,7 @@ public class LauncherMainActivity extends AppCompatActivity {
         // 初始化P2P模块
         try {
             VbyteP2PModule.create(this.getBaseContext(), APP_ID, APP_KEY, APP_SECRET);
+            VbyteP2PModule.disableDebug();
         } catch (Exception e) {
             e.printStackTrace();
         }

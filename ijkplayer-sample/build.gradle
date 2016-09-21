@@ -39,8 +39,8 @@ dependencies {
     compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.5.1'
     // ExoPlayer as IMediaPlayer: optional, experimental
     compile 'tv.danmaku.ijk.media:ijkplayer-exo:0.5.1'
-    compile 'cn.vbyte.p2p:libp2p:1.2.1'
-    compile 'cn.vbyte.p2p:libp2pimpl:1.2.4'
+    compile 'cn.vbyte.p2p:libp2p:1.2.2'
+    compile 'cn.vbyte.p2p:libp2pimpl:1.2.7'
 
     // armv5Compile project(':player-armv5')
     // armv7aCompile project(':player-armv7a')

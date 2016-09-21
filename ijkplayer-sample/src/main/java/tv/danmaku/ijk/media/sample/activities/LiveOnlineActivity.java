@@ -220,8 +220,12 @@ public class LiveOnlineActivity extends AppActivity {
                 values.put("channelID", "14496521645631186");
                 mDb.insert(table, null, values);
 
-                values.put("name", "低延迟测试");
+                values.put("name", "时钟流");
                 values.put("channelID", "57aaf3603d6bc39a2c61f2e0");
+                mDb.insert(table, null, values);
+
+                values.put("name", "低延迟测试");
+                values.put("channelID", "57e0a42eae201644416cc9d7");
                 mDb.insert(table, null, values);
 
                 values.put("name", "HLS测试");
@@ -271,7 +275,6 @@ public class LiveOnlineActivity extends AppActivity {
                     map.put("id", c.getString(0));
                     map.put("name", c.getString(1));
                     map.put("channelID", c.getString(2));
-                    map.put("format", c.getString(3));
                 }
                 listData.add(map);
             }

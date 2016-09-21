@@ -24,8 +24,8 @@ dependencies {
     compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.5.1'
     // ExoPlayer as IMediaPlayer: optional, experimental
     compile 'tv.danmaku.ijk.media:ijkplayer-exo:0.5.1'
-    compile 'cn.vbyte.p2p:libp2p:1.1.0'
-    compile 'cn.vbyte.p2p:libp2pimpl:1.2.2'
+    compile 'cn.vbyte.p2p:libp2p:1.2.2'  
+    compile 'cn.vbyte.p2p:libp2pimpl:1.2.7'  
 }
 ```
 - 在应用启动之初，启动VbyteP2PModule
@@ -89,5 +89,5 @@ IjkMediaPlayer.setOption(ijkMediaPlayer.OPT_CATEGORY_PLAYER, "packet-buffering",
 - [x] HLS、MP4、FLV等格式的点播P2P  
 - [x] HLS直播P2P
 
-[demo下载]: http://www.vbyte.cn/app/android-apk/ijkplayer-sample-all32-debug.apk
+[demo下载]: http://data1.vbyte.cn/apk/vbyte-demo.20160921.apk
 [文档]: https://github.com/Vbytes/libp2pimpl-android/blob/master/README.md
