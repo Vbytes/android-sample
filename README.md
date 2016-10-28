@@ -24,7 +24,7 @@ dependencies {
     compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.5.1'
     // ExoPlayer as IMediaPlayer: optional, experimental
     compile 'tv.danmaku.ijk.media:ijkplayer-exo:0.5.1'
-    compile 'cn.vbyte.p2p:libp2p:1.2.2'  
+    compile 'cn.vbyte.p2p:libp2p:1.2.3'  
     compile 'cn.vbyte.p2p:libp2pimpl:1.2.7'  
 }
 ```
@@ -65,7 +65,7 @@ try {
     e.printStackTrace();
 }
 ```
-- 然后就可以尽情地使用IJKPlayer和我们的P2P带来的便利功能吧
+- 然后就可以尽情地使用我们的P2P和IJKPlayer带来的便利功能吧
 
 **提示**: 如果您的android项目是一个Eclipse+ADT项目，我们建议您尽快转到AndroidStudio上面，当然，你也可以按照我们的[文档][]手动将这些so库和jar包放到您的项目中。
 
