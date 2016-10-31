@@ -89,5 +89,5 @@ IjkMediaPlayer.setOption(ijkMediaPlayer.OPT_CATEGORY_PLAYER, "packet-buffering",
 - [x] HLS、MP4、FLV等格式的点播P2P  
 - [x] HLS直播P2P
 
-[demo下载]: http://data1.vbyte.cn/apk/vbyte-demo.20160921.apk
+[demo下载]: http://data1.vbyte.cn/apk/vbyte-demo.20161031.apk
 [文档]: https://github.com/Vbytes/libp2pimpl-android/blob/master/README.md
