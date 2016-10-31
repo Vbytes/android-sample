@@ -35,11 +35,11 @@ dependencies {
 
     // compile project(':ijkplayer-java')
     // compile project(':ijkplayer-exo')
-    compile 'tv.danmaku.ijk.media:ijkplayer-java:0.5.1'
-    compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.5.1'
+    compile 'tv.danmaku.ijk.media:ijkplayer-java:0.6.3'
+    compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.6.3'
     // ExoPlayer as IMediaPlayer: optional, experimental
-    compile 'tv.danmaku.ijk.media:ijkplayer-exo:0.5.1'
-    compile 'cn.vbyte.p2p:libp2p:1.2.5'
+    compile 'tv.danmaku.ijk.media:ijkplayer-exo:0.6.3'
+    compile 'cn.vbyte.p2p:libp2p:1.2.6'
     compile 'cn.vbyte.p2p:libp2pimpl:1.2.7'
 
     // armv5Compile project(':player-armv5')
