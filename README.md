@@ -29,9 +29,7 @@ git clone https://github.com/Vbytes/android-sample.git
 ```
 
 - 用AndroidStudio打开刚刚clone下来的项目
-- 待gradle准备好后，即可编译安装到设备体验
-
-**提示**: 如果您的android项目是一个Eclipse+ADT项目，我们建议您尽快转到AndroidStudio上面，当然，你也可以按照我们的[集成指南][7]手动将这些so库和jar包放到您的项目中。
+- 待gradle准备好后，即可使用AndroidStudio编译安装到设备体验
 
 **提示**: 最新版的ijkplayer-android上面实现低延迟秒开的优化是设置下面这个参数:
 ```java
