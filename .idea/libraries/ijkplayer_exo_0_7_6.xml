@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="ijkplayer-exo-0.7.6">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ijkplayer-sample/build/intermediates/exploded-aar/tv.danmaku.ijk.media/ijkplayer-exo/0.7.6/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/ijkplayer-sample/build/intermediates/exploded-aar/tv.danmaku.ijk.media/ijkplayer-exo/0.7.6/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

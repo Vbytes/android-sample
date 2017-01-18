@@ -4,6 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".menu_app">
     <item
+        android:id="@+id/action_toggle_player"
+        android:title="@string/toggle_player"
+        app:showAsAction="ifRoom" />
+    <item
         android:id="@+id/action_toggle_render"
         android:title="@string/toggle_render"
         app:showAsAction="ifRoom" />
@@ -14,5 +18,9 @@
     <item
         android:id="@+id/action_show_info"
         android:title="@string/show_info"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_show_tracks"
+        android:title="@string/tracks"
         app:showAsAction="ifRoom" />
 </menu>
